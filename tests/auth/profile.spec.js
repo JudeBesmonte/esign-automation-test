@@ -8,7 +8,8 @@ test('Change profile information', async ({ page }) => {
   await page.getByRole('textbox', { name: 'Password' }).click();
   await page.getByRole('textbox', { name: 'Password' }).fill('asdfasdf');
   await page.getByRole('button', { name: 'Sign In' }).click();
-  await page.goto('https://e-signature-lite.vercel.app/');
-  await page.getByLabel('', { exact: true }).click();
+
+  // click avatar icon
+  await page.locator('#radix-_r_21_').click();
   await page.getByRole('menuitem', { name: 'Profile' }).click();
 });
