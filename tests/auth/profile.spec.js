@@ -9,7 +9,6 @@ test('Change profile information', async ({ page }) => {
   await page.getByRole('textbox', { name: 'Password' }).fill('asdfasdf');
   await page.getByRole('button', { name: 'Sign In' }).click();
 
-  // click avatar icon
-  await page.locator('#radix-_r_21_').click();
+  await page.locator('button[aria-haspopup="menu"]').click();
   await page.getByRole('menuitem', { name: 'Profile' }).click();
 });
