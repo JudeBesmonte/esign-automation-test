@@ -7,5 +7,4 @@ test('Visit e-signature lite and login to the application', async ({ page }) => 
     await page.getByPlaceholder('Enter your email').fill('chaechae@email.com');
     await page.getByPlaceholder('Enter your password').fill('asdfasdf');
     await page.getByRole('button', { name: 'Sign In' }).click();
-    await page.getByRole('button', { name: 'Skip for Now' }).click();
 });
