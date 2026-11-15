@@ -21,3 +21,17 @@ test('Change user full name and email address', async ({ page }) => {
   await expect(page.getByRole('textbox', { name: 'Email Address' })).toHaveValue('newemail@email.com');
 });
 
+test('Change user profile avatar', async ({ page }) => { 
+  
+  await page.goto('https://e-signature-lite.vercel.app/');
+  await page.getByRole('link', { name: 'Login' }).click();
+  await page.getByRole('textbox', { name: 'Email' }).click();
+  await page.getByRole('textbox', { name: 'Email' }).fill('newemail@email.com');
+  await page.getByRole('textbox', { name: 'Password' }).click();
+  await page.getByRole('textbox', { name: 'Password' }).fill('asdfasdf');
+  await page.getByRole('button', { name: 'Sign In' }).click();
+
+  await page.getByRole('button').nth(2).click();
+
+});
+
