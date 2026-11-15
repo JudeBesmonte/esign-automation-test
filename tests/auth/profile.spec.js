@@ -1,6 +1,6 @@
 import { test, expect } from '@playwright/test';
 
-test('Change profile information', async ({ page }) => {
+test('Change user full name and email address', async ({ page }) => {
     await page.goto('https://e-signature-lite.vercel.app/');
     await page.getByRole('link', { name: 'Login' }).click();
     await page.getByPlaceholder('Enter your email').fill('chaechae@email.com');
