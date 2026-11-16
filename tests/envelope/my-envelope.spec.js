@@ -17,10 +17,12 @@ test('Create Envelope, and upload documents', async ({ page }) => {
     await page.getByRole('button', { name: 'Create' }).click();
 
     // Upload a document to the envelope
-    await page.getByRole('button', { name: 'Upload Document' }).nth(1).click();
+    await page.getByRole('button', { name: 'Upload Documents' }).first().click();
+    await page.getByRole('button', { name: 'Choose Files' }).click();
     const [fileChooser] = await Promise.all([
         page.waitForEvent('filechooser'),
-        page.getByRole('button', { name: 'Upload Document' }).click(),
+        page.getByRole('button', { name: 'Upload 1 File(s)' }).click(),
     ]);
     await fileChooser.setFiles('tests/test-documents/sample.pdf');
 });
+
